@@ -25,9 +25,18 @@ public class PracticeFormTests {
         $("#userEmail").setValue("1IT@qa.ru");
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("1234567890");
-        $("#dateOfBirth").setValue("17 Feb 1990");
-        $("#subjectsContainer").setValue("Computer Science");
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").click();
+        $("[value='1']").click();
+        $(".react-datepicker__year-select").click();
+        $("[value='1990']").click();
+        $(".react-datepicker__day--017").click();
+        $("#subjectsInput").setValue("Computer Science").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
+        $(".form-file-label").click();
+
+        $("#uploadPicture").click();
+        $("#uploadPicture").click();
         $("#uploadPicture").click();
 
         $("#currentAddress").setValue("Saratov");
