@@ -35,6 +35,8 @@ public class PracticeFormTests {
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $(".form-file-label").click();
 
+
+
         $("#uploadPicture").click();
         $("#uploadPicture").click();
         $("#uploadPicture").click();
