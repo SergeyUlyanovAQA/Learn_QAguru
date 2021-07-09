@@ -39,7 +39,10 @@ public class PracticeFormTests {
         $("#currentAddress").setValue("Saratov");
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#react-select-4-input").setValue("Delhi").pressEnter();
-        $("#submit").click();
+        $("#submit").scrollTo().click();
+
+
+
 
 
 
