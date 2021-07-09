@@ -28,8 +28,8 @@ public class PracticeFormTests {
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("1234567890");
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("February")
-        $(".react-datepicker__year-select").selectOption("1990")
+        $(".react-datepicker__month-select").selectOption("February");
+        $(".react-datepicker__year-select").selectOption("1990");
         $(".react-datepicker__day--017").click();
         $("#subjectsInput").setValue("Computer Science").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
