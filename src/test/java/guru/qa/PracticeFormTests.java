@@ -4,6 +4,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -33,18 +35,13 @@ public class PracticeFormTests {
         $(".react-datepicker__day--017").click();
         $("#subjectsInput").setValue("Computer Science").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
-        $(".form-file-label").click();
-
-
-
-        $("#uploadPicture").click();
-        $("#uploadPicture").click();
-        $("#uploadPicture").click();
-
+        $("#uploadPicture").uploadFile(new File("src\\test\\resources\\DZ1.png"));
         $("#currentAddress").setValue("Saratov");
-        $("#stateCity-wrapper").$(byText("NCR")).click();
-        $("#stateCity-wrapper").$(byText("Delhi")).click();
+        $("#react-select-3-input").setValue("NCR").pressEnter();
+        $("#react-select-4-input").setValue("Delhi").pressEnter();
         $("#submit").click();
+
+
 
 
 
