@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTests {
 
@@ -24,7 +24,7 @@ public class PracticeFormTests {
         open("/automation-practice-form");
         $("#firstName").setValue("Ulyanov");
         $("#lastName").setValue("Sergey");
-        $("#userEmail").setValue("1IT@qa.ru");
+        $("#userEmail").setValue("I1T@qa.ru");
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("1234567890");
         $("#dateOfBirthInput").click();
@@ -41,12 +41,17 @@ public class PracticeFormTests {
         $("#react-select-4-input").setValue("Delhi").pressEnter();
         $("#submit").scrollTo().click();
 
-
-
-
-
-
-
+        $("#example-modal-sizes-title-lg").shouldHave(text ("Thanks for submitting the form"));
+        $x("//table//tr[1]/td[2]").shouldHave(text("Ulyanov Sergey"));
+        $x("//table//tr[2]/td[2]").shouldHave(text("I1T@qa.ru"));
+        $x("//table//tr[3]/td[2]").shouldHave(text("Male"));
+        $x("//table//tr[4]/td[2]").shouldHave(text("1234567890"));
+        $x("//table//tr[5]/td[2]").shouldHave(text("17 February,1990"));
+        $x("//table//tr[6]/td[2]").shouldHave(text("Computer Science"));
+        $x("//table//tr[7]/td[2]").shouldHave(text("Sports"));
+        $x("//table//tr[8]/td[2]").shouldHave(text("DZ1.png"));
+        $x("//table//tr[9]/td[2]").shouldHave(text("Saratov"));
+        $x("//table//tr[10]/td[2]").shouldHave(text("NCR Delhi"));
 
     }
 }
